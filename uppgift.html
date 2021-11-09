@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="uppgiftstyles.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+        <h1>Daigoro</h1>
+    </nav>
+
+    <!-- Links to Github and LinkedIn -->
+    <a class="content-link" href="https://www.github.com" target="_blank">
+        <div class="github-link">
+            <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" 
+                alt="Github icon"
+            >
+            <p>Github</p>
+        </div>
+    </a>
+    <a class="content-link "href="https://se.linkedin.com" target="_blank">
+        <div class="linkedin-link">
+            <img 
+            src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
+            alt="Github icon"
+            >
+            <p>LinkedIn</p>
+        </div>
+    </a>
+
+    <!-- Start of Content -->
+    <div class="content-frame">
+        <div class="content">
+            <!-- Information about me -->
+            <div class="about-me">
+                <button class="about-me-btn">
+                    <span>Om mig</span>
+                    <i onclick="onClickDisplay()" id="arrow" class="down"></i>
+                </button>
+                <div id="about-me-info">
+                    <p>Hej mitt namn är Daigoro och jag är 22 år och bor i Stockholm. 
+                        För tillfället studerar jag till fullstack developer på Nackademins yrkeshögskola.
+                    </p>
+                </div>
+            </div>
+            <!-- Earlier Projects -->
+            <div id="project-list">
+                <p>Projekt</p>
+                <ul>
+                    <li class="dark-grey">Portfolio</li>
+                    <li class="brown-grey">Twitter Layout</li>
+                    <li class="dark-grey">Social Media</li>
+                    <li class="brown-grey">Coffeeshop Store</li>
+                    <li></li>
+                </ul>
+            </div>
+            <!-- Education -->
+            <div id="education">
+                <h2>Utbildning</h2>
+                <img 
+                id="nackademin-img"
+                src="https://pbs.twimg.com/profile_images/1348660713053683722/oZKqZ-dw_400x400.png" 
+                alt=""
+                >
+                <h3>Nackademin <br> Yrkeshögskola</h3> 
+                <h4>(Fullstack Developer)</h4>
+                <span class="dot"></span> <br>
+                <span class="dot"></span> <br>
+                <span class="dot"></span> <br>
+                <img 
+                id="mikael-elias-img"
+                src="data:image/png;base64,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" 
+                alt=""
+                >
+                <h3>Mikael Elias <br> Gymmnasium</h3>
+                <h4>(Naturvetenskap)</h4>
+            </div>
+            <!-- Interests and Ambitions -->
+            <div id="interest-ambition">
+                <div id="interest">
+                    <h3>Intressen</h3>
+                    <ul>
+                        <li>Web utveckling</li>
+                        <li>Skateboarding</li>
+                        <li>Music produktion</li>
+                        <li>Språklära</li>
+                        <li>Fotografi</li>
+                        <li>Plantering</li>
+                    </ul>
+                </div>
+                <div id="ambition">
+                    <h3>Ambitioner</h3>
+                    <ul>
+                        <li>Jobba Hemifrån</li>
+                        <li>Flexibla Tider</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="uppgift.js"></script>
+</body>
+</html>
