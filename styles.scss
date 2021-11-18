@@ -1,0 +1,53 @@
+@use 'variables';
+
+@mixin paddingMargin {
+    margin: 20px;
+    padding: 30px;
+}
+
+@mixin backgroundColor($color: variables.$primaryColor) {
+    background-color: $color;
+}
+
+body {
+    font: 100% variables.$companyFont;
+}
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            color: variables.$textColor;
+            display: inline-block;
+            a{
+                font-weight: 800;
+            }
+        }
+    }
+}
+
+.alert {
+    @include paddingMargin();
+
+    &.alert-primary {
+        @include backgroundColor()
+    }
+
+    &.alert-secondary {
+        @include backgroundColor(variables.$secondaryColor)
+    }
+}
+
+.card {
+    @include paddingMargin();
+    border: 1px solid #CCC;
+
+    &.card-primary {
+        @include backgroundColor()
+    }
+
+    &.card-secondary {
+        @include backgroundColor(variables.$secondaryColor)
+    }
+}
